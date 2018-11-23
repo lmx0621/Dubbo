@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"baidu","bizType":"getBlackList","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","request":"","response":{"retCode":"0","retMsg":"OK","result":{"blackLevel":"A","blackReason":"C02BT002","blackDetails":{"C02BT002":[{"lian_date":"2015-12","odu_level":"M3+","odu_amount_level":"5"}]}},"signType":"1","sign":"46471249203043c33118a1920eb48e6e","timestamp":"1508818989268"}}}
+
+变量值校验
+    变量值校验    baidu_getBlackList

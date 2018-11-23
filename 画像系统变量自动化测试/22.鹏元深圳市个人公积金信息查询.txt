@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"pengyuan","bizType":"accumulationFund","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","request":"","msg":"请求成功","response":{"cisReports":{"receiveTime":"20180605 18:26:39","cisReport":{"queryConditions":{"item":[{"name":"name","caption":"被查询者姓名","value":"测试一"},{"name":"documentNo","caption":"被查询者证件号码","value":"110000199001011112"}]},"reportID":"2018060518000035","queryReasonID":"101","subReportTypes":"10408","szPersonFund":{"sbbalance":"5.6859","subReportTypeCost":"10408","totalNum":"9.2568","accountno":"2105*****25","subReportType":"10408","errorMessage":"","treatResult":"1","status":"正常"},"hasSystemError":"false","treatResult":"2","refID":"9d64bbbc935149c9ad69","buildEndTime":"2018-06-05 18:38:04","isFrozen":"false","subReportTypesShortCaption":"1、深圳个人公积金信息(10408) "},"batNo":"2018060518000035","unitName":"深圳旺金金融信息服务有限公司","queryUserID":"wjwsquery","subOrgan":"风险管理中心","queryCount":"1","costCount":{"item":{"subReportType":"10408","count":"2"}}},"status":""}}}
+
+变量值校验
+    变量值校验    pengyuan_accumulationFund

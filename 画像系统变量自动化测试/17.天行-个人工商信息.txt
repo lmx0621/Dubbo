@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"TianXing","bizType":"getMemberData","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"corporateManagers":[],"corporateShareholders":[],"caseInfos":[],"punishBreaks":[],"punished":[],"key":"210381197509111316","status":"EXIST","corporates":[{"regNo":"210381600782564","entType":"个体","regCapCur":"人民币元","ryName":"代海军（中强运输）","entName":"","regCap":"0.002545","entStatus":"注销"},{"regNo":"210381600425588","entType":"个体","regCapCur":"人民币元","ryName":"代海军","entName":"海城市辽C1169H-169F挂","regCap":"0.003500","entStatus":"注销"},{"regNo":"210381600729911","entType":"个体","regCapCur":"人民币元","ryName":"代海军(嘉城运输）","entName":"海城市辽C1169H-169F挂","regCap":"0.001200","entStatus":"注销"}]}}}
+
+变量值校验
+    变量值校验    TianXing_getMemberData

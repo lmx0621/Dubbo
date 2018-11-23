@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"TianXing","bizType":"threeElementValidate","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"success":true,"requestOrder":"b97b06bdd38e4d4aa5a8ac9fa2092561","data":{"name":"盛可歆","identityCard":"510105199202221265","accountNO":"6217863100001730785","checkStatus":"SAME","result":"验证成功"}}}}
+
+变量值校验
+    变量值校验    TianXing_threeElementValidate

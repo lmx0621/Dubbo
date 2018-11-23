@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"jiguang","bizType":"address","userIp":"10.10.10.10","collectTime":"1504680004","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","name":"周海松","request":"","flag":"S","code":"200","flowNo":"deefea7220bc4855938778dfb23420ce","msg":"请求成功","response":{"code":2000,"data":{"CPL_INDM_HOME_S":{"province":"河南省","city":"安阳市","district":"林州市"},"ABM_LBS_WORA_S":{"province":"河南省","city":"安阳市","district":"林州市"},"ABM_LBS_HOMETOWN":{"province":"湖北省","city":"武汉市","district":"武昌区"},"WK_ABM_LBS_TRIP":[{"province":"广东省","city":"广州市","times":5},{"province":"北京市","city":"北京市","times":3}],"WK_ABM_LBS_SHOP":{"商场":5,"美⻝城":"3","步行街":"1","超市":"2"},"WK_ABM_LBS_FUN":{"KTV":5,"网吧":"3","电影院":"1","游泳馆":"2","公园":"2","健身房":"2","台球":"2","棋牌室":"2"},"WK_ABM_LBS_FOOD":{"川湘菜":1,"火锅":"3","汉堡王":"1","⻨当劳":"2","烧烤烤肉":"2","海鲜":"2","自助餐":"2","德克士":"2"},"WK_ABM_LBS_HOTEL":{"99连锁":1,"格林豪泰":1,"七天连锁酒店":1,"汉庭酒店":1}},"message":"success","req_id":"dgyvKVh7SqifB"}},"message":"success"}
+
+变量值校验
+    [Documentation]    address
+    变量值校验    address

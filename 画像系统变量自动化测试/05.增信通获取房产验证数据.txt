@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zxt","bizType":"propertyVerify","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","flowNo":"61adbe30f05d49a994feba553742d900","response":{"data":{"verify_result":"Y","last_time":"2017-10-30"}}}}
+
+变量值校验
+    变量值校验    zxt_propertyVerify

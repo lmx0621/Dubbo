@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zhongan","bizType":"assessAddrReliability","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","request":"","msg":"请求成功","response":{"head":{"rspCode":"0000","rspMsg":"成功","rspTime":447},"body":{"reqInfo":{"addressFlag":"2","address":"四川省攀枝花市米易县攀莲镇 孺乐街 41号附 5号","phone":"18656271207","name":"骆凉倩","certiNo":"370103197607017176","requestNo":"1af34963f75e41e3b51d4002abbbaeb8"},"rspInfo":{"addressFlag":"1","agingRank":"X2","custAgingRank":"1","addrRichRank":"4","addAgingRank":"1","matchDistance":"3","custRichRank":"5","latestAddrDistance":"7","matchRank":"Ma","message":"服务调用成功！","status":"SUCC"}}}}}
+
+变量值校验
+    变量值校验    zhongan_assessAddrReliability

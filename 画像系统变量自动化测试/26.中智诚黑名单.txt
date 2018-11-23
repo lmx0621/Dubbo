@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zhongzhicheng","bizType":"getBlackList","userIp":"10.10.10.10","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"count":10,"tenant_count":10,"records":[{"name":"张三","pid":"441302197104170535","mobile":"18026662809","applied_at":"2017/08/20","confirmed_at":"2016/12/20","confirm_type":"overdue","loan_type":"","status":1}]}}}
+
+变量值校验
+    变量值校验    zhongzhicheng_getBlackList

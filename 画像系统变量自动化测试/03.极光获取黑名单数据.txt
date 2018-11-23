@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"jiguang","bizType":"blacklist","userIp":"10.10.10.10","collectTime":"1504680004","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","name":"周海松","request":"","flag":"S","code":"200","flowNo":"deefea7220bc4855938778dfb23420ce","msg":"请求成功","response":{"req_id":"2b0a1c3566912201","code":2000,"data":{"STRATEGY_SCORE":50,"BLACKLIST_SCORE":80},"message":"success"}}}
+
+变量值校验
+    [Documentation]    jiguang_blacklist
+    变量值校验    jiguang_blacklist

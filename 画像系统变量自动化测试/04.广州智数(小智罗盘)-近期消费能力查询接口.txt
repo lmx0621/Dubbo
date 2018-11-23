@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zhishu","bizType":"zxdebtcapConsume","userIp":"10.10.10.10","collectTime":"1504680004","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","name":"周海松","request":"","flag":"S","code":"200","flowNo":"fe3796713eba47ba844ff2312e7bb167","msg":"请求成功","response":{"head":{"code":"0","serialID":"fe3796713eba47ba844ff2312e7bb167","codeInfo":"查询成功"},"body":{"result":"J","orderID":"touna_test1526636515517-35534441"},"hashValue":"a860c6ca9315221078fcaa63b7fd9f724ae2a865d723fb0b8795e09fbf63f57b"}}}
+
+变量值校验
+    变量值校验    zhishu_zxdebtcapConsume

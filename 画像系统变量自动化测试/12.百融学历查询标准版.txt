@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"BaiRong","bizType":"findEducation","userIp":"10.10.10.10","collectTime":"1504680004","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"swift_number":"100107_20171226104655_3964","code":600000,"product":{"message":{"status":"0","value":"查询成功"},"api_status":{"code":"0","description":"查询成功","serial_no":"8e3c4c364f6f452584c390b202a9f4fe","status":true},"eduInfo":{"schoolCategory":"非211工程院校","schoolTrade":"大专","schoolType":"非985及211","dstudyStyle":"全日制"},"data":{"info":{"identity_code":"421127199411170916","identity_name":"梅中豪","graduate":"湖北第二师范学院","enrolDate":"2012","specialityName":"计算机科学与技术","graduateTime":"2016","educationDegree":"专科(高职)","studyStyle":"研究生","studyResult":"毕业","schoolCategory":"综合","schoolCity":"武汉市"},"result":"match","status":true},"costTime":318},"flag":{"flag_edulevel":1}}}}
+
+变量值校验
+    变量值校验    BaiRong_findEducation

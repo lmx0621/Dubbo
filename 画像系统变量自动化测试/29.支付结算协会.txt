@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"pcac","bizType":"queryRiskInfo","userIp":"10.10.10.10","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","request":"","response":{"status":"0","message":"查询成功","data":{"loanInfo":[{"memberType":"01","loanApprovalInfo":{"orgCount_0_6":1,"orgCount_6_12":2,"orgCount_12_24":22,"approved_0_6":1,"approved_6_12":3,"approved_12_24":1,"rejected_0_6":1,"rejected_6_12":10,"rejected_12_24":3,"inProgress_0_6":4,"inProgress_6_12":5,"inProgress_12_24":1,"lastRejectTime":"2018-05-25"},"loanBasicInfo":{"loanTotal":20,"uncleared":2,"unclearedAmount":500000,"overdueUncleared":400,"overdueUnclearedAmount":300,"overdueUnclearedMaxTime":7,"normalLoanOrgCount":1,"overdueCleared":1,"overdueClearedAmount":100000,"overdueMaxTime":25},"recentLoanInfo":{"loanOriginationTime":"2017-11-05","loanOriginationAmount":200000,"overdueClearedAmount":500,"overdueAmount":11,"overdueMaxTime":12},"nloanInfo":{"loanOriginationOrgCount":3,"loanRejectedOrgCount":0,"loanOriginationAmount":20000,"overdueClearedAmount":0,"overdueAmount":0,"overdueOrgcount":0,"overdueMaxTime":"0","queryOrgCount":28}}],"otherInfo":{"nameUnmatchedOrgCount":3,"totalMemberCount":22,"feedbackMemberCount":20},"blackListInfo":[{"type":"1","time":"2017-08-25","amount":100000,"reason":"通过身份证伪造银行卡、手机号、骗取结构贷款","memberName":"test"},{"type":"1","time":"2017-09-25","amount":136484,"reason":"通过身份证伪造银行卡、手机号、骗取结构贷款","memberName":"test"}]}}}}
+
+变量值校验
+    变量值校验    pcac_queryRiskInfo

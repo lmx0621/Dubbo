@@ -1,0 +1,17 @@
+[
+  "test_class.py::TestClass::()::test_one",
+  "test_class.py::TestClass::()::test_two",
+  "test_class2.py::TestClass::()::test_one",
+  "test_class2.py::TestClass::()::test_two",
+  "test_function.py::test_functionn",
+  "test_function.py::test_function",
+  "test_sample.py::test_answer",
+  "test_sysexit.py::test_mytest",
+  "test_time.py::test_timedistance_v0[a0-b0-expected0]",
+  "test_time.py::test_timedistance_v0[a1-b1-expected1]",
+  "test_time.py::test_timedistance_v1[forward]",
+  "test_time.py::test_timedistance_v1[backward]",
+  "test_time.py::test_timedistance_v2[20011212-20011211-expected0]",
+  "test_time.py::test_timedistance_v2[20011211-20011212-expected1]",
+  "test_tmpdir.py::test_needsfiles"
+]

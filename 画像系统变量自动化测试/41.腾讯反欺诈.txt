@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"tencent","bizType":"tecentAntiFraud","userIp":"10.10.10.10","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","request":"","response":{"code":0,"codeDesc":"success","message":"OK","riskScore":90,"riskInfo":[{"riskCode":401},{"riskCode":403},{"riskCode":405},{"riskCode":407},{"riskCode":203}]}}}
+
+变量值校验
+    变量值校验    tencent_tencentAntiFraud

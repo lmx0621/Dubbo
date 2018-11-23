@@ -1,0 +1,73 @@
+*** Settings ***
+Library           Selenium2Library
+Library           RequestsLibrary
+Library           json
+Library           Collections
+Library           String
+Library           requests
+Variables         path.py
+Library           AutoTestLib_Common
+Library           test.py
+
+*** Variables ***
+${ip}             10.0.4.147
+${port}           8080
+${idcard}         110000000000000015
+${mobile}         13000000008
+${topic}          MQ_TOPIC_KAFKA_PROFILE_SYSTEM
+
+*** Keywords ***
+获取接口变量列表
+    [Arguments]    ${location}
+    : FOR    ${i}    IN    ${location}
+    \    ${j}    Get Length    ${i}
+    @{name_list}    Create List
+    : FOR    ${m}    IN RANGE    ${j}
+    \    ${name}    Get From Dictionary    ${i[${m}]}    name
+    \    Append To List    ${name_list}    ${name}
+    \    Comment    ${scope}    Get From Dictionary    ${i[${m}]}    scope
+    \    Comment    ${value}    Get From Dictionary    ${i[${m}]}    value
+    [Return]    ${name_list}
+
+从dubbo接口获取变量的值
+    [Arguments]    ${bianliangming}
+    Create Session    url    http://${ip}:${port}
+    ${r}    Get Request    url    /dubbo-rest/dubbo/api?idcard=${idcard}&mobile=${mobile}
+    ${resp}    Set Variable    ${r.content}
+    @{list}    Create List
+    ${dict}    loads    ${resp}
+    ${variables}    Get Target Value    ${bianliangming}    ${dict}    ${list}
+    log    ${variables}
+    ${scope}    Get From Dictionary    ${variables[0]}    scope
+    ${value}    Get From Dictionary    ${variables[0]}    value
+    ${variables_value}    Set Variable    "${bianliangming}":"scope":${scope},"value":${value}
+    [Return]    ${variables_value}
+
+获取预期结果
+    [Arguments]    ${bianliang}    ${i}    ${loc}
+    ${scope}    Get From Dictionary    ${path['${loc}'][${i}]}    scope
+    ${value}    Get From Dictionary    ${path['${loc}'][${i}]}    value
+    ${variables_value}    Set Variable    "${bianliang}":"scope":${scope},"value":${value}
+    [Return]    ${variables_value}
+
+变量值校验
+    [Arguments]    ${variable}
+    ${q}    获取接口变量列表    ${path['${variable}']}
+    log    ${q}
+    ${qqq}    Get Length    ${q}
+    : FOR    ${m}    IN RANGE    ${qqq}
+    \    ${exc}    获取预期结果    ${q[${m}]}    ${m}    ${variable}
+    \    ${varle}    从dubbo接口获取变量的值    ${q[${m}]}
+    \    log    --------------------------正在校验${q[${m}]}变量--------------------------------
+    \    log    从dubbo获取的值：${varle}
+    \    Should Be Equal    ${varle}    ${exc}    变量对应不上
+    \    log    --------------------------校验${q[${m}]}变量完成且正确--------------------------------
+
+请求报文
+    [Arguments]    ${message}
+    Create Session    url    http://${ip}:${port}
+    ${data}=    Create Dictionary    topic=${topic}    message=${message}
+    ${headers}=    Create Dictionary    Content-Type=application/x-www-form-urlencoded
+    ${resp}    Post Request    url    /dubbo-rest/dubbo/send    data=${data}    headers=${headers}
+    Log    Response:${resp.content}
+    Should Be Equal    ok    ${resp.content}    \    请求成功

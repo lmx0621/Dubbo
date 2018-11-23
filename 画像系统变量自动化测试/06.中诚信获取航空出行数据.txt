@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zhongchengxin","bizType":"trareport","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"name":"张三","idCard":"110000000000000015","phone_no":"13000000008","month":"12","flag":"S","code":"200","msg":"请求成功","flowNo":"bebc39e2faae4dbb8b0f8179effaed9b","response":{"resCode":"0000","resMsg":"处理成功","tid":"0A70022114943314658965581","sign":"34DB6A17AEF19B2FD99C8ACF814BC968","reqTid":"123456","data":{"totalFlightTimes":1,"domesticFlightTimes":1,"internalFlightTimes":0,"bestCabin":3,"bestCabinTimes":1,"freqCabin":"3","freqCabinTimes":1,"firstClassTimes":0,"businessClassTimes":0,"economyClassTimes":1,"freqFromCity":"青岛","freqFromCityCount":1,"freqToCity":"上海","freqToCityCount":1,"avgTicketPrice":1000,"recentTravelTime":"20160514","membershipGrade":"E","flightScore":"E","freqTravelTime":"201605","freqAirlineCompany":"山东航","freqAirlineCompanyCount":1,"freeTimes":0,"totalDelay":2,"totalDelayTimes":1,"totalFlyTpm":693,"flytimes":6,"avgdiscount":40,"avgTicketday":10}}}}
+
+变量值校验
+    变量值校验    zhongchengxin_trareport

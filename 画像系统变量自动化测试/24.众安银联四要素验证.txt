@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"zhongan","bizType":"authCard4Elements","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","request":"","msg":"请求成功","response":{"head":{"accountNo":"***","appKey":"36dcd6a0801a4f9d3e0dbca61285dc64","methodName":"authCard4Elements","privateKey":"xxxxxxxxxx","requestNo":"ZAB283E706386D40B7B3F414751547A408","rspCode":"0000","rspMsg":"成功","rspTime":363,"serviceName":"zaedsBankCardService"},"body":{"reqInfo":{"name":"***","idCardCore":"422325********2544","bankCardNo":"6225********2807","bankPreMobile":"138********"},"rspInfo":{"result":"T","message":"认证信息匹配"}}}}}
+
+变量值校验
+    变量值校验    zhongan_authCard4Elements

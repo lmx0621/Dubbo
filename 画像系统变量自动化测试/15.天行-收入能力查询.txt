@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"TianXing","bizType":"income","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"success":true,"requestOrder":"f94d26dfcdc24938aa42347a5f7ed439","data":{"name":"骆凉倩","identityCard":"110000000000000015","incomeGrade":"B","incomeInterval":"(3000,5000]"}}}}
+
+变量值校验
+    变量值校验    TianXing_income

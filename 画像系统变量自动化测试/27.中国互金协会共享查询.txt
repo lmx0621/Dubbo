@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"nifa","bizType":"infoUpload","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","request":"","response":{"loancount":"10","loanamt":"123456","outstandcount":"3","loanbal":"12365","generationcount":"1","generationamount":"1","overduecount":"666","overdueamt":"888","overduemorecount":"1","overduemoreamt":"999","totalorg":"最近1个月被2家机构查询","queryatotalorg":"最近1个月被2家机构以“贷前审批”原因查询","infoquerybean":[{"ordernum":"5","ddate":"2018-06-08","s_value":"贷前审批"},{"ordernum":"4","ddate":"2018-05-28","s_value":"贷前审批"},{"ordernum":"3","ddate":"2018-04-08","s_value":"担保资格审查"},{"ordernum":"2","ddate":"2018-03-08","s_value":"服务监管"},{"ordernum":"1","ddate":"2018-02-08","s_value":"其他"}],"msgCode":"200","msgContent":"成功!"}}}
+
+变量值校验
+    变量值校验    nifa_infoUpload

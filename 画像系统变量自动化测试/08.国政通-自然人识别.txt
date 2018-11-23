@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"gzt","bizType":"personIdentify","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","flowNo":"94ab439cc1bf4069a3028fb013052a27","request":"","response":{"message":{"status":"0","value":"处理成功"},"badInfoDs":{"badInfoD":{"@inputXm":"郜XX","@inputZjhm":"41092819XXXXXXXXX10","@inputZt":"false","@inputWfxw":"true","@inputSd":"false","@inputXd":"false","wybs":"ff8080815ca5f4a3015cafc12c1200b7","inputZjhm18":"41092819XXXXXXXXX10","code":"1","message":"查询成功_有数据","checkCount2":"2","inputZt":"false","inputWfxw":"true","inputSd":"false","inputXd":"false","ztCheckresult":"一致","wfxwCheckresult":"一致","sdCheckresult":"一致","xdCheckresult":"一致","item":{"caseTypeCode":"3090000","caseTime":"[10,15)"}}}}}}
+
+变量值校验
+    变量值校验    gzt_personIdentify

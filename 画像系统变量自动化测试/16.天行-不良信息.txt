@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"TianXing","bizType":"getNegativeInfoData","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","request":"","flag":"S","code":"200","msg":"请求成功","response":{"success":true,"data":{"idCard":"110000000000000015","name":"刘青松","drugCompared":"一致","crime":"false","drug":"false","drugRelated":"一致","drugRelatedCompared":"一致","crimeCompared":"一致","escapeCompared":"一致","status":"NO_DATA"}}}}
+
+变量值校验
+    变量值校验    TianXing_getNegativeInfoData

@@ -1,0 +1,9 @@
+*** Settings ***
+Resource          interface.txt
+
+*** Test Cases ***
+请求报文
+    请求报文    {"dataSource":"001","dataType":"geo","bizType":"threeBaseData","userIp":"10.10.10.10","collectTime":"1434564455445","sessionId":"1434564455445","data":{"id_card":"110000000000000015","phone_no":"13000000008","flag":"S","code":"200","msg":"请求成功","request":"","response":{"msg":"成功","code":"200","data":{"ISPNUM":{"province":"广东","city":"汕头","isp":"移动"},"RSL":[{"RS":{"code":"1","desc":"三维验证不一致"},"IFT":"B7"}],"ECL":[]}}}}
+
+变量值校验
+    变量值校验    geo_threeBaseData
